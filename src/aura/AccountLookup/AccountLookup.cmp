@@ -14,7 +14,7 @@ http://creativecommons.org/licenses/by/3.0/deed.en_US
     
     <!-- Lookup component -->
     <c:LookupSObject label="Account" pluralLabel="Accounts" sObjectAPIName="Account" instanceId="MyAccount"
-    	listIconSVGPath="/resource/SLDS092/assets/icons/standard-sprite/svg/symbols.svg#account"
+    	listIconSVGPath="/resource/SLDS/assets/icons/standard-sprite/svg/symbols.svg#account"
     	listIconClass="slds-icon-standard-account"
     />
 
