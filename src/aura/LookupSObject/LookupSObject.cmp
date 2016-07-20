@@ -7,7 +7,7 @@ http://creativecommons.org/licenses/by/3.0/deed.en_US
 <aura:component controller="LookupSObjectController" >
     <!-- Required Scripts/Styles -->
     <!-- Salesforce Lightning Design System : https://www.lightningdesignsystem.com/ -->
-    <ltng:require styles="/resource/SLDS/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    <ltng:require styles="/resource/SLDS/assets/styles/salesforce-lightning-design-system.css" />
     
     <!-- Attributes -->
     <aura:attribute name="sObjectAPIName" type="String" required="true" 
@@ -28,7 +28,7 @@ http://creativecommons.org/licenses/by/3.0/deed.en_US
         description="The resulting matches returned by the Apex controller." />
 
     <!-- Events -->
-	<aura:registerEvent name="updateLookupIdEvent" type="c:UpdateLookupId"/>    
+    <aura:registerEvent name="updateLookupIdEvent" type="c:UpdateLookupId"/>    
     <aura:registerEvent name="clearLookupIdEvent" type="c:ClearLookupId"/>    
     
     <!-- Lookup Markup : See https://www.lightningdesignsystem.com/components/lookups -->
@@ -56,16 +56,16 @@ http://creativecommons.org/licenses/by/3.0/deed.en_US
                 </div>
             </div>
             <!-- This is the lookup list markup. Initially it's hidden -->
-            <div aura:id="lookuplist" class="slds-lookup__menu slds-hide" role="listbox">
+            <div aura:id="lookuplist" class="slds-dropdown slds-dropdown--left slds-hide" role="listbox">
                 <div class="slds-lookup__item">
                     <button class="slds-button">
                         <c:svg class="slds-icon slds-icon-text-default slds-icon--small" xlinkHref="/resource/SLDS/assets/icons/utility-sprite/svg/symbols.svg#search" />
                         &quot;{!v.searchString}&quot; in {!v.pluralLabel}
                     </button>
                 </div>
-                <ul aura:id="lookuplist-items" class="slds-lookup__list" role="presentation">
+                <ul aura:id="lookuplist-items" class="dropdown__list" role="presentation">
                     <aura:iteration items="{!v.matches}" var="match">
-                        <li class="slds-lookup__item">
+                        <li class="slds-dropdown__item">
                             <a id="{!globalId + '_id_' + match.SObjectId}" role="option" onclick="{!c.select}">
                                 <c:svg class="{!'slds-icon ' + v.listIconClass + ' slds-icon--small'}" xlinkHref="{!v.listIconSVGPath}" />{!match.SObjectLabel}
                             </a>

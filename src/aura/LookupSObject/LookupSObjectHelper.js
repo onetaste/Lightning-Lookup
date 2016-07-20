@@ -12,7 +12,6 @@
         // Get the search string, input element and the selection container
         var searchString = cmp.get('v.searchString');
         var inputElement = cmp.find('lookup');
-        var lookupList = cmp.find('lookuplist');
 
         // Clear any errors and destroy the old lookup items container
         inputElement.set('v.errors', null);
@@ -24,9 +23,6 @@
             $A.util.addClass(lookupList, 'slds-hide');
             return;
         }
-
-        // Show the lookuplist
-        $A.util.removeClass(lookupList, 'slds-hide');
 
         // Get the API Name
         var sObjectAPIName = cmp.get('v.sObjectAPIName');
@@ -56,6 +52,9 @@
                     cmp.set('v.matches', null);
                     return;
                 }
+                var lookupList = cmp.find('lookuplist').getElement();
+                // Show the lookuplist
+                $A.util.removeClass(lookupList, 'slds-hide');
                 
                 // Store the results
                 cmp.set('v.matches', matches);
@@ -104,7 +103,9 @@
 
         // Populate the event with the selected Object Id and Instance Id
         updateEvent.setParams({
-            "sObjectId" : objectId, "instanceId" : instanceId
+            "sObjectId" : objectId, 
+            "instanceId" : instanceId,
+            "sObjectname" : objectLabel
         });
 
         // Fire the event
@@ -114,7 +115,7 @@
         cmp.set("v.searchString", objectLabel);
 
         // Hide the Lookup List
-        var lookupList = cmp.find("lookuplist");
+        var lookupList = cmp.find("lookuplist").getElement();
         $A.util.addClass(lookupList, 'slds-hide');
 
         // Hide the Input Element
