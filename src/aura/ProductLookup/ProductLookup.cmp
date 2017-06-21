@@ -1,0 +1,24 @@
+<!--
+(c) OneTaste
+
+(c) Tony Scott. This code is provided as is and without warranty of any kind.
+
+This work by Tony Scott is licensed under a Creative Commons Attribution 3.0 Unported License.
+http://creativecommons.org/licenses/by/3.0/deed.en_US
+-->
+<aura:application >
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="Id" description="The current record Id to display" />
+    <aura:attribute name="recordName" type="String" description="The current record name to display" />
+     
+    <!-- Event handlers -->
+    <aura:handler name="updateLookupIdEvent" event="c:UpdateLookupId" action="{!c.handleIdUpdate}"/>
+    <aura:handler name="clearLookupIdEvent" event="c:ClearLookupId" action="{!c.handleIdClear}"/>
+     
+    <!-- Lookup component -->
+    <c:LookupSObject label="Product" pluralLabel="Products" sObjectAPIName="Product2"
+        listIconSVGPath="/resource/SLDS/assets/icons/standard-sprite/svg/symbols.svg#product"
+        listIconClass="slds-icon-standard-product"
+                     instanceId="test"
+    />
+</aura:application>
