@@ -6,7 +6,7 @@
 This work by Tony Scott is licensed under a Creative Commons Attribution 3.0 Unported License.
 http://creativecommons.org/licenses/by/3.0/deed.en_US
 -->
-<aura:application >
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
     <!-- Attributes -->
     <aura:attribute name="recordId" type="Id" description="The current record Id to display" />
     <aura:attribute name="recordName" type="String" description="The current record name to display" />
@@ -21,4 +21,4 @@ http://creativecommons.org/licenses/by/3.0/deed.en_US
         listIconClass="slds-icon-standard-product"
                      instanceId="test"
     />
-</aura:application>
+</aura:component>
