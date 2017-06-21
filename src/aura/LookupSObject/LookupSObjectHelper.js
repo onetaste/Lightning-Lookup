@@ -21,6 +21,7 @@
         {
             // Hide the lookuplist
             $A.util.addClass(lookupList, 'slds-hide');
+            $A.util.removeClass(lookupList, 'slds-show');
             return;
         }
 
@@ -117,14 +118,17 @@
         // Hide the Lookup List
         var lookupList = cmp.find("lookuplist").getElement();
         $A.util.addClass(lookupList, 'slds-hide');
+        $A.util.removeClass(lookupList, 'slds-show');
 
         // Hide the Input Element
         var inputElement = cmp.find('lookup');
         $A.util.addClass(inputElement, 'slds-hide');
+        $A.util.removeClass(inputElement, 'slds-show');
 
         // Show the Lookup pill
         var lookupPill = cmp.find("lookup-pill");
         $A.util.removeClass(lookupPill, 'slds-hide');
+        $A.util.addClass(lookupPill, 'slds-show');
 
         // Lookup Div has selection
         var inputElement = cmp.find('lookup-div');
@@ -156,10 +160,12 @@
         // Hide the Lookup pill
         var lookupPill = cmp.find("lookup-pill");
         $A.util.addClass(lookupPill, 'slds-hide');
+        $A.util.removeClass(lookupPill, 'slds-show');
 
         // Show the Input Element
         var inputElement = cmp.find('lookup');
         $A.util.removeClass(inputElement, 'slds-hide');
+        $A.util.addClass(inputElement, 'slds-show');
 
         // Lookup Div has no selection
         var inputElement = cmp.find('lookup-div');
